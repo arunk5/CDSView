@@ -1,0 +1,85 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:m="sap.m"
+		controllerName="sap.ui.demo.cdsview_flp.CDSView" xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	<Text text="" textAlign="Center" level="H2"/>
+	
+	
+				
+	<l:Splitter id="mainSplitter" height="100%" width="100%">
+	<Table id="idProductsTable" inset="false" items="{path: 'Materials>/Zcds_Demo_1'}"
+								>
+								<headerToolbar>
+									<Toolbar>
+										<Title text="Material List" level="H2" />
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="20%" demandPopin="true">
+										<Text text="MATNR" />
+									</Column>
+									<Column width="20%" demandPopin="true">
+										<Text text="MTART" />
+									</Column>
+							<!--  		<Column width="20%" demandPopin="true"
+										hAlign="Right">
+										<Text text="MATKL" />
+									</Column>
+									<Column width="20%" demandPopin="true"
+										hAlign="Center">
+										<Text text="MEINS" />  
+									</Column> -->
+									<Column width="20%" demandPopin="true"
+										hAlign="Center">
+										<Text text="" />
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Navigation" press="handleLineItemPress" >
+										<cells>
+											<Text text="{Materials>matnr}" />
+											<Text text="{Materials>mtart}" />
+									<!--		<Text text="{Materials>matkl}" />
+											<Text text="{Materials>meins}" />  -->
+																	
+										</cells>
+									</ColumnListItem>
+								</items>
+								<layoutData><l:SplitterLayoutData size="700px" /></layoutData>
+							</Table>
+	                  <Panel width="100%" headerText="Material Details">
+	                  
+	                  <Table id="idProductsTable1" inset="false" >
+	                  <!--  items="{path:"+url+ "}" -->
+								
+								
+								<columns>
+									
+							  		<Column width="20%" demandPopin="true"
+										hAlign="Right">
+										<Text text="MATKL" />
+									</Column>
+									<Column width="20%" demandPopin="true"
+										hAlign="Center">
+										<Text text="MEINS" />  
+									</Column> 
+									
+								</columns>
+								<items>
+									<ColumnListItem id = "colItems" type="Navigation" >
+										<cells>
+											<Text text="{MATS>matkl}" />
+											<Text text="{MATS>meins}" />
+											
+										<!--	<Text text="{Materials>meins}" />  -->
+																	
+										</cells>
+									</ColumnListItem>
+								</items>
+								<layoutData><l:SplitterLayoutData size="700px" /></layoutData>
+							</Table>
+	                  
+	<layoutData><l:SplitterLayoutData size="700px" /></layoutData>
+	</Panel>
+	</l:Splitter>
+
+</core:View>
